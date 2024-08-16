@@ -1,0 +1,15 @@
+//
+//  LogOnViewController.swift
+//  BiometricAuthentication
+//
+//  Created by Rong Sun on 8/14/24.
+//
+
+import UIKit
+
+class LogOnViewController: UIViewController {
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+  }
+}
