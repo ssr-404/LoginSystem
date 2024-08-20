@@ -13,11 +13,17 @@
 		ADEF092B2C6BFBE6003A2214 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = ADEF092A2C6BFBE6003A2214 /* Base */; };
 		ADEF09332C6DA171003A2214 /* LogOnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEF09322C6DA171003A2214 /* LogOnViewController.swift */; };
 		ADEF09352C6DA17C003A2214 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEF09342C6DA17C003A2214 /* DashboardViewController.swift */; };
-		ADEF09372C6DA1B8003A2214 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEF09362C6DA1B8003A2214 /* AuthManager.swift */; };
-		ADEF09392C6DA1C0003A2214 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEF09382C6DA1C0003A2214 /* AuthCoordinator.swift */; };
+		ADEF09392C6DA1C0003A2214 /* DashboardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEF09382C6DA1C0003A2214 /* DashboardCoordinator.swift */; };
 		ADEF093B2C6E4A83003A2214 /* LogonCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEF093A2C6E4A83003A2214 /* LogonCoordinator.swift */; };
 		ADEF093D2C6E4C67003A2214 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEF093C2C6E4C67003A2214 /* KeychainManager.swift */; };
 		ADEF093F2C6E4C79003A2214 /* BiometricAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEF093E2C6E4C78003A2214 /* BiometricAuthManager.swift */; };
+		ADEF09412C741A04003A2214 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEF09402C741A04003A2214 /* RootViewController.swift */; };
+		ADEF09432C742DF8003A2214 /* download.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEF09422C742DF8003A2214 /* download.png */; };
+		ADEF09452C74324B003A2214 /* LogonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEF09442C74324B003A2214 /* LogonViewModel.swift */; };
+		ADEF09472C74336F003A2214 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEF09462C74336E003A2214 /* Coordinator.swift */; };
+		ADEF09492C74372C003A2214 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEF09482C74372C003A2214 /* DashboardViewModel.swift */; };
+		ADEF094B2C743E91003A2214 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEF094A2C743E91003A2214 /* SettingsViewController.swift */; };
+		ADEF094D2C744219003A2214 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEF094C2C744219003A2214 /* SettingsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,11 +35,17 @@
 		ADEF092C2C6BFBE6003A2214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADEF09322C6DA171003A2214 /* LogOnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOnViewController.swift; sourceTree = "<group>"; };
 		ADEF09342C6DA17C003A2214 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
-		ADEF09362C6DA1B8003A2214 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
-		ADEF09382C6DA1C0003A2214 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		ADEF09382C6DA1C0003A2214 /* DashboardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCoordinator.swift; sourceTree = "<group>"; };
 		ADEF093A2C6E4A83003A2214 /* LogonCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogonCoordinator.swift; sourceTree = "<group>"; };
 		ADEF093C2C6E4C67003A2214 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		ADEF093E2C6E4C78003A2214 /* BiometricAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthManager.swift; sourceTree = "<group>"; };
+		ADEF09402C741A04003A2214 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		ADEF09422C742DF8003A2214 /* download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = download.png; path = ../../../../download.png; sourceTree = "<group>"; };
+		ADEF09442C74324B003A2214 /* LogonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogonViewModel.swift; sourceTree = "<group>"; };
+		ADEF09462C74336E003A2214 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		ADEF09482C74372C003A2214 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		ADEF094A2C743E91003A2214 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		ADEF094C2C744219003A2214 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,15 +81,21 @@
 				ADEF091E2C6BFBE5003A2214 /* AppDelegate.swift */,
 				ADEF09202C6BFBE5003A2214 /* SceneDelegate.swift */,
 				ADEF09272C6BFBE6003A2214 /* Assets.xcassets */,
+				ADEF09422C742DF8003A2214 /* download.png */,
 				ADEF09292C6BFBE6003A2214 /* LaunchScreen.storyboard */,
 				ADEF092C2C6BFBE6003A2214 /* Info.plist */,
-				ADEF09322C6DA171003A2214 /* LogOnViewController.swift */,
+				ADEF09462C74336E003A2214 /* Coordinator.swift */,
 				ADEF093A2C6E4A83003A2214 /* LogonCoordinator.swift */,
+				ADEF09322C6DA171003A2214 /* LogOnViewController.swift */,
+				ADEF09442C74324B003A2214 /* LogonViewModel.swift */,
+				ADEF09382C6DA1C0003A2214 /* DashboardCoordinator.swift */,
 				ADEF09342C6DA17C003A2214 /* DashboardViewController.swift */,
-				ADEF09362C6DA1B8003A2214 /* AuthManager.swift */,
-				ADEF09382C6DA1C0003A2214 /* AuthCoordinator.swift */,
 				ADEF093C2C6E4C67003A2214 /* KeychainManager.swift */,
 				ADEF093E2C6E4C78003A2214 /* BiometricAuthManager.swift */,
+				ADEF09402C741A04003A2214 /* RootViewController.swift */,
+				ADEF09482C74372C003A2214 /* DashboardViewModel.swift */,
+				ADEF094A2C743E91003A2214 /* SettingsViewController.swift */,
+				ADEF094C2C744219003A2214 /* SettingsViewModel.swift */,
 			);
 			path = BiometricAuthentication;
 			sourceTree = "<group>";
@@ -142,6 +160,7 @@
 			files = (
 				ADEF09282C6BFBE6003A2214 /* Assets.xcassets in Resources */,
 				ADEF092B2C6BFBE6003A2214 /* Base in Resources */,
+				ADEF09432C742DF8003A2214 /* download.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,15 +171,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADEF09372C6DA1B8003A2214 /* AuthManager.swift in Sources */,
 				ADEF091F2C6BFBE5003A2214 /* AppDelegate.swift in Sources */,
 				ADEF09352C6DA17C003A2214 /* DashboardViewController.swift in Sources */,
+				ADEF09452C74324B003A2214 /* LogonViewModel.swift in Sources */,
+				ADEF09492C74372C003A2214 /* DashboardViewModel.swift in Sources */,
+				ADEF09412C741A04003A2214 /* RootViewController.swift in Sources */,
 				ADEF093D2C6E4C67003A2214 /* KeychainManager.swift in Sources */,
 				ADEF093B2C6E4A83003A2214 /* LogonCoordinator.swift in Sources */,
+				ADEF09472C74336F003A2214 /* Coordinator.swift in Sources */,
 				ADEF093F2C6E4C79003A2214 /* BiometricAuthManager.swift in Sources */,
-				ADEF09392C6DA1C0003A2214 /* AuthCoordinator.swift in Sources */,
+				ADEF09392C6DA1C0003A2214 /* DashboardCoordinator.swift in Sources */,
+				ADEF094B2C743E91003A2214 /* SettingsViewController.swift in Sources */,
 				ADEF09332C6DA171003A2214 /* LogOnViewController.swift in Sources */,
 				ADEF09212C6BFBE5003A2214 /* SceneDelegate.swift in Sources */,
+				ADEF094D2C744219003A2214 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
