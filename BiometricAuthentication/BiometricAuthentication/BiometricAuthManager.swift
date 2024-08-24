@@ -23,7 +23,7 @@ class BiometricAuthManager {
   
   private init() {}
   
-  public var isBiometricAuthEnabled: Bool {
+  public var isBiometricAuthEnabled: Bool { // If biometric is enabled in UserDefaults.
     return UserDefaults.standard.bool(forKey: self.biometricKey)
   }
   
@@ -31,7 +31,7 @@ class BiometricAuthManager {
     UserDefaults.standard.set(state, forKey: self.biometricKey)
   }
   
-  func isBiometricAuthenticationAvailable() -> Bool {
+  func isBiometricAuthenticationAvailable() -> Bool { // If the user's device enabled biometric.
     var error: NSError?
     guard context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
       // TODO: Fall back to a asking for username and password
@@ -63,7 +63,18 @@ class BiometricAuthManager {
     }
   }
   
-//  func showBiometricSettingsAlert(_ controller: UIViewController) {
-//    let alertController = UIAlertController(title: <#T##String?#>, message: <#T##String?#>, preferredStyle: <#T##UIAlertController.Style#>)
-//  }
+  func showBiometricSettingsAlert(_ controller: UIViewController) {
+    let alertController = UIAlertController(title: "Enable Face ID/Touch ID",
+                                            message: "To use biometric authentication, you need to enable Face ID/Touch ID for this app in your device settings",
+                                            preferredStyle: .alert)
+    let settingsAction = UIAlertAction(title: "Go to Settings", style: .default) { _ in
+      if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+        UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+      }
+    }
+    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+    alertController.addAction(settingsAction)
+    alertController.addAction(cancelAction)
+    controller.present(alertController, animated: true, completion: nil)
+  }
 }

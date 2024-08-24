@@ -10,6 +10,7 @@ import UIKit
 class LogOnViewController: UIViewController {
   
   public var viewModel: LogonViewModel?
+  var biometricBtnImage: UIImage?
   
   lazy var usernameField: UITextField = {
     let label = "Email (default: testuser123)".localizedLowercase
@@ -36,13 +37,7 @@ class LogOnViewController: UIViewController {
     textfield.translatesAutoresizingMaskIntoConstraints = false
     return textfield
   }()
-  
-  var biometricBtnImage: UIImage?
-  
-//  lazy var biometricBtnImage: UIImage = {
-//    return UIImage(systemName: "touchid")
-//  }()!
-  
+
   lazy var biometricButton: UIButton = {
     let button = UIButton(frame: CGRect(x: 30, y: 30, width: 50, height: 50))
     button.setImage(biometricBtnImage, for: .normal)
@@ -60,21 +55,25 @@ class LogOnViewController: UIViewController {
     button.translatesAutoresizingMaskIntoConstraints = false
     return button
   }()
-    
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = "Login System"
     self.view.backgroundColor = .white
     
-    //    if BiometricAuthManager.shared.isBiometricAuthEnabled {
-    //      setUpBiometricImage()
-    //    }
-    setUpBiometricImage()
+    if BiometricAuthManager.shared.isBiometricAuthEnabled {
+      setUpBiometricImage()
+    }
     addSubviews()
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    if BiometricAuthManager.shared.isBiometricAuthEnabled {
+      setUpBiometricImage()
+    } else {
+      self.biometricButton.isHidden = true
+    }
   }
   
   func addSubviews() {
@@ -118,21 +117,40 @@ class LogOnViewController: UIViewController {
       switch BiometricAuthManager.shared.getBiometricType() {
       case .touchID:
         self.biometricBtnImage = UIImage(systemName: "touchid") ?? UIImage()
+        self.biometricButton.isHidden = false
       case .faceID:
         self.biometricBtnImage = UIImage(systemName: "faceid") ?? UIImage()
+        self.biometricButton.isHidden = false
       case .opticID:
         self.biometricBtnImage = UIImage(systemName: "opticid") ?? UIImage()
-      default:
         self.biometricButton.isHidden = false
+      default:
+        self.biometricButton.isHidden = true
       }
     }
   }
   
   @objc private func loginButtonPressed() {
-    self.viewModel?.navigateToDashboard()
+    guard let username = usernameField.text,
+          let pwd = passwordField.text else {
+      // TODO: Add Alert to handle non username or pwd scenarios.
+      return
+    }
+    if usernameField.text?.isEmpty == true || passwordField.text?.isEmpty == true {
+      // TODO: Add Alert to handle empty username or pwd scenarios.
+      return
+    }
+    self.viewModel?.verifyCredentials(username: username, pwd: pwd, isBiometricLogin: false)
+//    self.viewModel?.navigateToDashboard()
   }
   
   @objc private func biometricButtonPressed() {
-    
+    if BiometricAuthManager.shared.isBiometricAuthenticationAvailable() {
+      self.viewModel?.proceedBiometricAuthentication()
+    } else {
+      // This would happen only when: user device turned Biometric from on to off after user is already on the login screen.
+      // Show user alert that Biometric setting is not enabled in this app. Guide the user to the device settings.
+      BiometricAuthManager.shared.showBiometricSettingsAlert(self)
+    }
   }
 }

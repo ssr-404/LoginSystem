@@ -12,14 +12,17 @@ protocol DashboardCoordinatorDelegate: AnyObject {
 }
 
 class DashboardCoordinator: Coordinator {
-  var navigationController: UINavigationController
-  
-  init(navigationController: UINavigationController) {
+  var navigationController: UINavigationController!
+  var rootViewController: UIViewController
+  var dashboardViewController: DashboardViewController!
+    
+  init(rootViewController: UIViewController, navigationController: UINavigationController) {
+    self.rootViewController = rootViewController
     self.navigationController = navigationController
   }
   
   func start() {
-    let dashboardViewController = DashboardViewController()
+    self.dashboardViewController = DashboardViewController()
     let dashboardViewModel = DashboardViewModel(dashboardCoordinatorDelegate: self)
     dashboardViewController.viewModel = dashboardViewModel
     self.navigationController.pushViewController(dashboardViewController, animated: true)

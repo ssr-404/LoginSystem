@@ -8,6 +8,8 @@
 import UIKit
 
 protocol Coordinator {
-  var navigationController: UINavigationController { get set }
+  // Use impolicitly unwrapped navigationController here because this won't be set in init() but in start()
+  var navigationController: UINavigationController! { get set }
+  var rootViewController: UIViewController { get set }
   func start()
 }

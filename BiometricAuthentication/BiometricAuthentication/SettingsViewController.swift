@@ -27,9 +27,10 @@ class SettingsViewController: UIViewController {
     stack.addArrangedSubview({
       let toggle = UISwitch(frame: .zero)
       toggle.layer.cornerRadius = toggle.bounds.height / 2.0
-      toggle.onTintColor = .systemIndigo
+      toggle.onTintColor = .systemMint
       toggle.backgroundColor = .systemGray
-      toggle.addTarget(self, action: #selector(toggleBiometricSetting), for: .valueChanged)
+      toggle.addTarget(self, action: #selector(self.toggleBiometricSetting(_:)), for: .valueChanged)
+      toggle.isOn = BiometricAuthManager.shared.isBiometricAuthEnabled
       toggle.translatesAutoresizingMaskIntoConstraints = false
       return toggle
     }())
@@ -52,7 +53,7 @@ class SettingsViewController: UIViewController {
     ])
   }
   
-  @objc private func toggleBiometricSetting() {
-    
+  @objc private func toggleBiometricSetting(_ switchTapped: UISwitch) {
+    BiometricAuthManager.shared.setBiometricAuthKey(to: switchTapped.isOn)
   }
 }

@@ -86,7 +86,7 @@ class DashboardViewController: UIViewController {
   
   @objc private func navigateToSettingsView() {
     DispatchQueue.main.async {
-      // TODO: 
+      self.viewModel?.navigateToSettingsView()
     }
   }
 }
