@@ -11,17 +11,16 @@ Features
 
 Usage
 
-	1.	Adding Face ID/Touch ID Support:
-Ensure your app’s Info.plist file contains the appropriate usage descriptions for Face ID (NSFaceIDUsageDescription).
+	1.	Adding Face ID/Touch ID Support: Ensure your app’s Info.plist file contains the appropriate usage descriptions for Face ID (NSFaceIDUsageDescription).
 	2.	Creating Authentication Context:
-	•	Create and configure an LAContext instance to manage biometric authentication in the app.
-	•	Customize the cancel button title for user-friendly interactions.
+		•	Create and configure an LAContext instance to manage biometric authentication in the app.
+		•	Customize the cancel button title for user-friendly interactions.
  	3.	Testing Biometric Availability:
-	•	Use canEvaluatePolicy(_:error:) to check if the device supports biometric authentication.
+		•	Use canEvaluatePolicy(_:error:) to check if the device supports biometric authentication.
  	4.	Executing Authentication:
-	•	Once ready, prompt the user for authentication using evaluatePolicy(_:localizedReason:reply:).
+		•	Once ready, prompt the user for authentication using evaluatePolicy(_:localizedReason:reply:).
 	5.	UI Adjustments:
-	•	Handle differences between Face ID and Touch ID in the user interface by adapting to the specific technology available on the device.
+		•	Handle differences between Face ID and Touch ID in the user interface by adapting to the specific technology available on the device.
 Requirements
 
 	•	iOS 11.0+
